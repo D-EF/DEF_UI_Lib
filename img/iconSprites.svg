@@ -1,0 +1,646 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg id="root" xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" version="1.1" >
+    
+    <!-- 杂色背景 -->
+    <defs>
+        <pattern id="grid" width="0.1" height="0.1">
+            <rect width="100" height="100" stroke="#fff8" stroke-width="1" fill="#0000"/>
+        </pattern>
+        <image href="./SpritesMap.png" width="1000" height="1000" x="0" y="0"></image>
+    </defs>
+
+    <!-- 每个元素的分隔线 -->
+    <svg width="1000" height="1000" x="0" y="0"><rect width="1000" height="1000" fill="url(#grid)"></rect></svg>
+    
+    <style>
+    *{
+        backface-visibility: visible;
+        overflow:visible;
+    }
+    #root{
+        /* background-color:#000; */
+        /* overflow:hidden; */
+    }
+    </style>
+    <g>
+    <!-- 图标元素 -->
+        <symbol id="logo_item">
+            <path d="M0 0 L12.06794919 21.9615242 L12.06794919 47.3205081 L-0 60 L-12.06794919 47.3205081 L-12.06794919 21.9615242 Z"/>
+        </symbol>
+        <symbol id="logo">
+        <!-- DEF's logo -->
+            <use transform="translate(0 73.2) rotate(-105)" href="#logo_item"></use>
+            <use transform="translate(73.2 00) rotate(15)" href="#logo_item"></use>
+            <use transform="translate(100 100) rotate(-225)" href="#logo_item"></use>
+        </symbol>
+        <symbol id="bbs">
+        <!-- 一个对话冒泡的图标 -->
+            <mask id="bbsMask">
+                <rect height="60" width="80" rx="5" ry="5" y="10" x="10"  fill="#fff"/>
+                <path d="M50 50L80 90L75 50" fill="#fff"/>
+                <ellipse ry="5" rx="5" cy="40" cx="30" fill="#000"/>
+                <ellipse ry="5" rx="5" cy="40" cx="50" fill="#000"/>
+                <ellipse ry="5" rx="5" cy="40" cx="70" fill="#000"/>
+            </mask>
+            <rect mask="url(#bbsMask)" width="100" height="100" />
+        </symbol>
+        <symbol id="jigsaw">
+        <!-- 一块拼图的图标 -->
+            <mask id="jigsaw_mask">
+                <rect width="75" height="75" x="23" y="23" fill="#fff"/>
+                <circle cx="14" cy="58" r="12" stroke-width="0" fill="#fff"/>
+                <circle cx="58" cy="14" r="12" stroke-width="0" fill="#fff"/>
+                <circle cx="92" cy="58" r="12" stroke-width="0" fill="#000"/>
+                <circle cx="58" cy="92" r="12" stroke-width="0" fill="#000"/>
+            </mask>
+            <rect x="0" y="0" width="100" height="100" mask="url(#jigsaw_mask)" />
+        </symbol>
+        <symbol  id="Query">
+        <!-- 搜索(一个放大镜)的图标 -->
+            <circle cx="42" cy="42" r="32" fill="none" stroke-width="8"></circle>
+            <line x1="66" x2="92" y1="66" y2="92" stroke-width="8" stroke-linecap="round" />
+        </symbol>
+        <symbol id="reload">
+        <!-- 刷新的图标 -->
+            <circle cx="50" cy="50" r="35" fill="none" stroke-width="8" stroke-linecap="round" stroke-dasharray="200" stroke-dashoffset="335" />
+            <path d="M85 80 L70 50 L100 50 Z" />
+        </symbol>
+        <symbol id="enter">
+        <!-- 回车的图标 -->
+            <line x1="90" x2="90" y1="20" y2="50" stroke-linecap="round" stroke-width="5" />
+            <line x1="20" x2="90" y1="50" y2="50" stroke-linecap="round" stroke-width="5" />
+            <line x1="6" x2="6" y1="30" y2="70" stroke-linecap="round" stroke-width="2" />
+            <path d="M6 50 L40 40 40 60 Z" />
+        </symbol>
+        <symbol id="play">
+        <!-- 播放图标(一个三角形) -->
+            <path d="M20 10 L80 50 L20 90 Z" />
+        </symbol>
+        <symbol id="pause">
+        <!-- 暂停图标(两个竖杠) -->
+            <rect x="20" y="10" width="20" height="80" />
+            <rect x="60" y="10" width="20" height="80" />
+        </symbol>
+        <symbol id="next">
+        <!-- 下一个的图标 -->
+            <svg x="0" y="50" viewBox="0 50 150 150">
+                <use href="#play"></use>
+            </svg>
+            <svg x="30" y="50" viewBox="0 50 150 150">
+                <use href="#play"></use>
+            </svg>
+            <rect x="75" y="25" width="10" height="50" />
+        </symbol>
+        <symbol id="add">
+        <!-- +加号(十字)的图标 -->
+            <rect x="40" y="10" width="20" height="80" />
+            <rect x="10" y="40" width="80" height="20" />
+        </symbol>
+        <symbol id="minuid">
+        <!-- -减号(一字)的图标 -->
+            <rect x="10" y="40" width="80" height="20" />
+        </symbol>
+        <symbol id="multiply">
+        <!-- ×乘号(叉)的图标 -->
+            <g transform="translate(50 -20)rotate(45)">
+                <use href="#add"></use>
+            </g>
+        </symbol>
+        <symbol id="divided">
+        <!-- ÷除号的图标 -->
+            <rect x="10" y="40" width="80" height="20" />
+            <circle cx="50" cy="20" r="12" stroke-width="0"/>
+            <circle cx="50" cy="80" r="12" stroke-width="0"/>
+        </symbol>
+        <symbol id="percent">
+        <!-- %百分号的图标 -->
+            <circle cx="28" cy="28" r="16" fill="none" stroke-width="8" ></circle>
+            <circle cx="72" cy="72" r="16" fill="none" stroke-width="8" ></circle>
+            <line x1="15" y2="15" x2="85" y1="85" stroke-width="12" />
+        </symbol>
+        <symbol id="v_ddd">
+        <!-- 横排的三个点的图标 -->
+            <circle cx="20" cy="50" r="12" stroke-width="0" />
+            <circle cx="50" cy="50" r="12" stroke-width="0" />
+            <circle cx="80" cy="50" r="12" stroke-width="0" />
+        </symbol>
+        <symbol id="arrow">
+        <!-- 一个箭头的图标 -->
+            <line stroke-width="10" x1="50" x2="50" y1="25" y2="90" />
+            <path d="M50 10 L35 30 L65 30 Z"/>
+        </symbol>
+        <symbol id="up_down">
+        <!-- 一个向上的箭头和一个向下的箭头 -->
+            <svg x="-20" y="0">
+                <use href="#arrow"></use>
+            </svg>
+            <svg x="120" y="100">
+                <use transform="rotate(180)" href="#arrow"></use>
+            </svg>
+        </symbol>
+        <symbol id="pan">
+        <!-- 一只笔的图标 -->
+            <mask id="panMask">
+                <path d="M35 10 L65 10 L65 70 L50 90  L35 70 Z" fill="#fff" />
+                <line x1="0" x2="100" y1="70" y2="70" stroke="#000" stroke-width="2"/>
+                <line x1="0" x2="100" y1="20" y2="20" stroke="#000" stroke-width="2"/>
+                <line x1="0" x2="100" y1="25" y2="25" stroke="#000" stroke-width="2"/>
+                <line x1="40" x2="40" y1="25" y2="70" stroke="#000" stroke-width="2"/>
+                <line x1="60" x2="60" y1="25" y2="70" stroke="#000" stroke-width="2"/>
+            </mask>
+            <rect width="100" height="100" mask="url(#panMask)" />
+        </symbol>
+        <symbol id="edit">
+        <!-- 编辑(笔在写东西)的图标 -->
+            <g transform-origin="50 50" transform="rotate(45)">
+                <svg width="100" height="100" viewBox="0 0 100 100">
+                    <use transform-origin="50 50" transform="scale(0.8 1.2)" href="#pan"></use>
+                </svg>
+            </g>
+            <line x1="10" x2="90" y1="85" y2="85" stroke-width="2" />
+        </symbol>
+        <symbol id="copy">
+        <!-- 拷贝的图标 -->
+            <mask id="copyMask">
+                <rect x="10" y="10" width="60" height="60" fill="#000" stroke="#fff" stroke-width="4" />
+                <rect x="30" y="30" width="60" height="60" fill="#000" stroke="#fff" stroke-width="4" />
+                <svg x="35" y="35" width="50" height="50" viewBox="0 0 100 100">
+                    <use href="#add" fill="#fff"></use>
+                </svg>
+            </mask>
+            <rect mask="url(#copyMask)" width="100" height="100" />
+        </symbol>
+        <symbol id="download">
+        <!-- 下载的图标 -->
+            <use transform-origin="50 50" transform="rotate(180)" href="#arrow"></use>
+            <line x1="10" x2="90" y1="90" y2="90" stroke-width="3" />
+        </symbol>
+        <symbol id="volume">
+        <!-- 一个喇叭的图标 -->
+            <circle cx="15" cy="50" r="12" />
+            <svg x="-4">
+            <path d="M35 35 L60 10 L60 90 L35 65 Z" />
+            </svg>
+            <line x1="65" x2="65" y1="30" y2="70" stroke-width="8" />
+            <line x1="78" x2="78" y1="20" y2="80" stroke-width="8" />
+            <line x1="91" x2="91" y1="8" y2="92" stroke-width="8" />
+        </symbol>
+        <mask id="pointed">
+            <rect width="100" height="100" fill="#fff" />
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="#000">
+                <use href="#add"></use>
+            </svg>
+        </mask>
+        <symbol id="fullScrren">
+        <!-- 全屏的图标 -->
+            <svg x="5" y="5" width="90" height="90" viewBox="0 0 100 100">
+                <svg x="29" y="29" width="42" height="42" viewBox="0 0 100 100" stroke-width="12">
+                    <use transform-origin="50 50" transform="rotate(-45)  translate(0,-80)"  href="#arrow"></use>
+                    <use transform-origin="50 50" transform="rotate(45)   translate(0,-80)"  href="#arrow"></use>
+                    <use transform-origin="50 50" transform="rotate(-135) translate(0,-80)"  href="#arrow"></use>
+                    <use transform-origin="50 50" transform="rotate(135)  translate(0,-80)"  href="#arrow"></use>
+                </svg>
+                <svg viewBox="0 0 100 100" width="90" height="90" x="5" y="5">
+                <rect mask="url(#pointed)" fill="none" stroke-width="10" width="100" height="100" />
+                </svg>
+            </svg>
+        </symbol>
+        <mask id="unFullpointed">
+            <line x1="50" x2="50" y1="10" y2="90" stroke-width="12" stroke="#fff" />
+            <line x1="10" x2="90" y1="50" y2="50" stroke-width="12" stroke="#fff" />
+            <line x1="50" x2="50" y1="0" y2="100" stroke-width="6" stroke="#000" />
+            <line x1="0" x2="100" y1="50" y2="50" stroke-width="6" stroke="#000" />
+        </mask>
+        <symbol id="unFullScrren">
+        <!-- 退出全屏的图标 -->
+            <svg x="0" y="0" width="50" height="50" viewBox="0 0 100 100">
+                <use transform-origin="50 50" transform="rotate(135)" href="#arrow"></use>
+            </svg>
+            <svg x="50" y="0" width="50" height="50" viewBox="0 0 100 100">
+                <use transform-origin="50 50" transform="rotate(-135)" href="#arrow"></use>
+            </svg>
+            <svg x="0" y="50" width="50" height="50" viewBox="0 0 100 100">
+                <use transform-origin="50 50" transform="rotate(45)" href="#arrow"></use>
+            </svg>
+            <svg x="50" y="50" width="50" height="50" viewBox="0 0 100 100">
+                <use transform-origin="50 50" transform="rotate(-45)" href="#arrow"></use>
+            </svg>
+            <rect mask="url(#unFullpointed)" width="100" height="100" />
+        </symbol>
+        <symbol id="fullWindow">
+        <!-- 窗口内全屏的图标 -->
+            <rect width="90" height="90" x="5" y="5" fill="none" stroke-width="4" />
+            <rect width="90" height="20" x="5" y="5"  />
+            <svg viewBox="0 0 100 100" width="60" height="60" x="20" y="30">
+                <use href="#fullScrren"></use>
+            </svg>
+        </symbol>
+        <symbol id="unFullWindow">
+        <!-- 退出窗口内全屏的图标 -->
+            <rect width="90" height="90" x="5" y="5" fill="none" stroke-width="4" />
+            <rect width="90" height="20" x="5" y="5"  />
+            <svg viewBox="0 0 100 100" width="60" height="60" x="20" y="30">
+                <use href="#unFullScrren"></use>
+            </svg>
+        </symbol>
+        <symbol id="sqrt">
+        <!-- 开平方根(√)符号  也用作勾 -->
+            <path d="M 20 55 L 50 80 L 80 20 L 90 20 L 55 90 L 45 90 L 20 66 L 10 66  L 10 55 Z" />
+        </symbol>
+        <symbol id="openEye">
+        <!-- 张开的 眼睛 -->
+            <mask id="openEye_mask">
+                <circle fill="#fff" cx="50" cy="50" r="15" />
+                <path stroke-width="2" stroke="#000" fill="#0000" d="M10 50 Q25 45 50 45 T90 50" />
+                <path  fill="#fff" d="M10 50 Q25 25 50 25 T90 50 Q75 45 50 45 T10 50z M10 50 Q25 75 50 75 T90 50 Q75 65 50 65 T10 50z" />
+            </mask>
+            <rect x="0" y="0" width="100" height="100" mask="url(#openEye_mask)"/>
+        </symbol>
+        <symbol id="closeEye">
+        <!-- 关闭的 眼睛 -->
+            <mask id="closeEye_mask">
+                <use fill="#fff" href="#openEye"></use>
+                <line stroke-width="10" stroke="#000" x1="10" x2="90" y1="10" y2="90" />
+                <line stroke-width="5" stroke="#fff" x1="10" x2="90" y1="10" y2="90" />
+
+                <!-- <line stroke-width="5" stroke="#000" x1="8" x2="88" y1="10" y2="90" />
+                <line stroke-width="5" stroke="#fff" x1="12" x2="92" y1="10" y2="90" /> -->
+
+            </mask>
+            <rect x="0" y="0" width="100" height="100" mask="url(#closeEye_mask)"/>
+        </symbol>
+        <symbol id="list">
+        <!-- 列表 list 的图标 -->
+            <circle cx="15" cy="25" r="10" />
+            <circle cx="15" cy="50" r="10" />
+            <circle cx="15" cy="75" r="10" />
+            <rect x="30" y="20" width="60" height="10" />
+            <rect x="30" y="45" width="60" height="10" />
+            <rect x="30" y="70" width="60" height="10" />
+        </symbol>
+        <symbol id="home">
+        <!-- 主页(房子) home 的图标 -->
+            <path fill="#0000" stroke-width="6" stroke-linejoin="round" d="M10 45 L20 45 L20 90 L40 90 L40 60 L60 60 L60 90 L80 90 L80 45 L90 45 L50 10 Z"/>
+        </symbol>
+        <symbol id="user">
+        <!-- 用户 user 的图标 -->
+            <mask id="userMask">
+                <g stroke-width="6">
+                    <circle stroke-linecap="round" cx="50" cy="90" r="40" stroke-dasharray="125.6" stroke-dashoffset="125.6" fill="#000" stroke="#fff" />
+                    <circle stroke-linecap="round" cx="50" cy="40" r="25" fill="#000" stroke="#fff"  />
+                </g>
+            </mask>
+            <rect x="0" y="0" width="100" height="100" mask="url(#userMask)" />
+        </symbol>
+        <symbol id="key">
+        <!-- 一个钥匙 的图标 -->
+            <mask id="keyMask">
+                <g stroke-width="0">
+                    <path fill="#fff" d="M10 10 L 10 25 L 15 30 L 25 30 L 25 40 L 35 40 L 35 50 L 70 85 L 85 70 L 25 10 Z" />
+                    <circle cx="68" cy="68" r="22" fill="#fff" />
+                    <circle cx="75" cy="75" r="6" fill="#000" />
+                </g>
+            </mask>
+            <rect x="0" y="0" width="100" height="100" mask="url(#keyMask)" />
+        </symbol>
+        <symbol id="radarChart" >
+        <!-- 雷达图 的图标 -->
+            <!-- 外圈 -->
+            <circle cx="50" cy="50" r="36" fill="#0000" stroke-width="4"/>
+            <!-- 环 -->
+            <circle cx="50" cy="50" r="24" fill="#0000" stroke-width="2" stroke-dasharray="131"/>
+            <circle cx="50" cy="50" r="12" fill="#0000" stroke-width="2" stroke-dasharray="66" />            
+            <circle cx="50" cy="50" r="3"/>
+            <!-- 扫描线 -->
+            <line x1="50" x2="75" y1="50" y2="25" stroke-width="3" />
+            <g stroke-width="1">
+            <!-- 坐标轴 -->
+                <line x1="50" x2="50" y1="14" y2="86"/>
+                <line x1="14" x2="86" y1="50" y2="50"/>
+            </g>
+            <g>
+                <circle cx="67" cy="67" r="2"/>
+                <circle cx="38" cy="64" r="2"/>
+                <circle cx="33" cy="25" r="2"/>
+            </g>
+        </symbol>
+        <symbol id="pieChart" >
+        <!-- 饼状图 的图标 -->
+            <g fill="#0000" stroke-width="4" stroke-linecap="round">
+                <circle cx="50" cy="50" r="36" stroke-dasharray="166"  stroke-dashoffset="-1.6"/>
+                <circle cx="55" cy="45" r="36" stroke-dasharray="56.5 99999" stroke-dashoffset="-169.2"/>
+                <line x1="55" x2="91" y1="45" y2="45" />
+                <line x1="55" x2="55" y1="9"  y2="45" />
+            </g>
+        </symbol>
+        <symbol id="location" >
+        <!-- 本地(现在地点) 的图标 -->
+            <g fill="#0000" stroke-width="5">
+                <path d="M50 90 Q 60 80 75 40 Q 80 10 50 10 T 25 40 Q40 80 50 90 Z M50 45 Q 60 45 60 35 T 50 25 T 40 35 T 50 45 Z" />
+                <!-- <circle cx="50" cy="36" r="10"/> -->
+            </g>
+        </symbol>
+        
+        <symbol id="rect" >
+        <!-- 矩形的图标 -->
+            <g fill="#0000" stroke-width="5">
+                <rect x="10" y="20" width="80" height="60" />
+            </g>
+        </symbol>
+        
+        <symbol id="arc" >
+        <!-- 弧形 的图标 -->
+            <g fill="#0000" stroke-width="5">
+                <path d="M20 20 C60.8 20 80 39.2 80 80 " />
+            </g>
+        </symbol>
+        
+        <symbol id="sector" >
+        <!-- 扇形 的图标 -->
+            <g fill="#0000" stroke-width="5">
+                <path d="M20 20 C60.8 20 80 39.2 80 80L 20 80 Z" />
+            </g>
+        </symbol>
+        
+        <symbol id="polygon" >
+        <!-- 多边形 的图标 -->
+            <g fill="#0000" stroke-width="5">
+                <path d="M20 20 l60 0 l-30 30 l30 30 l-60 0 Z" />
+            </g>
+        </symbol>
+        
+        <symbol id="bezier" >
+        <!-- 贝塞尔曲线 的图标 -->
+            <g fill="#0000" stroke-width="4">
+                <path d="M55 80 L20 80 C60 80 40 20 80 20 L45 20" />
+                <rect width="10" height="10" x="55" y="75" />
+                <rect width="10" height="10" x="35" y="15" />
+            </g>
+        </symbol>
+        <symbol id="path" >
+        <!-- 路径图形 的图标 -->
+            <svg viewBox="-30 -30 460 400" width="100" height="100" >
+                <path  stroke-width="16" fill="#0000" d="M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80 q 25 -80, 80 0 t 80 0 l 40 240 a 300 180 45 0 0 -320 -40z"></path>
+                <g stroke-width="6">
+                    <text x="100"  y="50"  style="font-size : 72px;">C</text>
+                    <text x="250"  y="50"  style="font-size : 72px;">Q</text>
+                    <text x="180"  y="350" style="font-size : 72px;">A</text>
+                    <text x="300"  y="220" style="font-size : 72px;">L</text>
+                </g>
+            </svg>
+        </symbol>
+        <symbol id="folder" >
+        <!-- 文件夹 的图标 -->
+            <svg viewBox="0 0 100 100" x="5" y="5" width="90" height="90" >
+                <path stroke-width="5" fill="#0000" d="M10 15 l40 0 l15 15 H90 V90 H10 z"></path>
+            </svg>
+        </symbol>
+        
+        <symbol id="folder_open" >
+        <!-- 文件夹 打开 的图标 -->
+            <use href="#folder"></use>
+            <svg viewBox="0 0 100 100" x="50" y="50" width="35" height="35">
+                <use href="#add"></use>
+            </svg>
+        </symbol>
+        <symbol id="folder_closed" >
+        <!-- 文件夹 关闭 的图标 -->
+            <use href="#folder"></use>
+            <svg viewBox="0 0 100 100" x="50" y="50" width="35" height="35">
+                <use href="#minuid"></use>
+            </svg>
+        </symbol>
+        <symbol id="cursor" >
+        <!-- 鼠标光标 的图标 -->
+            <g fill="#0000" stroke-width="6">
+                <path d="M20 20 l60 30 l-20 10 l-10 20 z" />
+            </g>
+        </symbol>
+        <symbol id="move" >
+        <!-- 平移(移动) 的图标 -->
+            <svg x="7" y="7" width="86" height="86" viewBox="0 0 100 100">
+                <use transform-origin="50 50" transform="rotate(0)   translate(0,-8)"   href="#arrow"></use>
+                <use transform-origin="50 50" transform="rotate(90)  translate(0,-8)"  href="#arrow"></use>
+                <use transform-origin="50 50" transform="rotate(180) translate(0,-8)" href="#arrow"></use>
+                <use transform-origin="50 50" transform="rotate(270) translate(0,-8)" href="#arrow"></use>
+            </svg>
+        </symbol>
+        
+        <symbol id="linear_mapping" >
+        <!-- 线性变换 的图标 -->
+            <svg stroke-width="8" width="100" height="100" style="overflow:hidden;">
+                <svg x="7" y="7" width="86" height="86" viewBox="0 0 100 100">
+                    <path d="M10 120 V0 m10 10l-10 -10 l-10 10 M-20 90 H100 m-10 -10 l10 10 l-10 10" fill="#0000" transform-origin="10 90"></path>
+                    <path opacity="0.5" d="M10 90 l50 -50" stroke-dasharray="4 4"></path>
+                    <path opacity="0.7" d="M10 120 V0 m15 15l-15 -15 l-15 15 M-20 90 H100 m-15 -15 l15 15 l-15 15" fill="#0000" transform-origin="10 90" transform="translate(50,-50) scale(0.5,0.5) rotate(30)" stroke-width="12"></path>
+                </svg>
+            </svg>
+        </symbol>
+
+        <symbol id="same_reference">
+        <!-- 两个对象使用同一个引用 的图标 -->
+            <svg stroke-width="5" x="4" y="4" viewBox="0 0 100 100" width="92" height="92" fill="#0000" text-anchor="middle" dominant-baseline="middle" font-size="20px">
+                <path d="M50 60 v-20 m-10 10 l10 -10 l10 10 m-10 -10 
+                    a 1 1 0 0 0 0 -33.941125 a 1 1 0 1 0 0 33.941125 
+                    m0 15 m-15.980762 15 a 1 1 0 1 0 -24 24 a 1 1 0 0 0 24 -24 
+                    l15.980762 -10 l15.980762 10 
+                    a 1 1 0 1 0 24 24 a 1 1 0 0 0 -24 -24 ">
+                </path>
+                <text stroke-width="3" x="50" y="25">
+                    D
+                </text>
+            </svg>
+        </symbol>
+
+        <symbol id="copy_SameReference">
+        <!-- copy 两个对象使用同一个引用 的图标 -->
+            <use href="#same_reference"></use>
+            <svg x="4" y="4" viewBox="0 0 100 100" width="92" height="92" fill="#0000" text-anchor="middle" dominant-baseline="middle" font-size="20px">
+                <text stroke-width="3" x="21" y="84">
+                    O
+                </text>
+                <text stroke-width="3" x="79" y="84">
+                    +
+                </text>
+            </svg>
+        </symbol>
+        
+        <symbol id="rename">
+        <!-- 重命名 的图标 -->
+            <svg x="10" y="10" viewBox="0 0 100 100" fill="#0000" stroke-width="8" width="80" height="80">
+                <path d="M60 30 H0 v40 H60 
+                    M64 15 h16 m-8 0 v70 m-8 0 h16 
+                    M80 30 H100 v40H80"></path>
+            </svg>
+        </symbol>
+
+        <!-- 下面是从网上找到的 -->
+
+        <symbol id="random">
+        <!-- 随机符号的图标 来自 https://www.iconfont.cn/search/index?searchType=icon&q=%E9%9A%8F%E6%9C%BA -->
+            <svg t="1593029294635" class="icon" viewBox="0 0 1365 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2490" width="100" height="100">
+                <path d="M267.377778 387.982222l22.755555 22.755556L410.737778 290.133333l-22.755556-22.755555a423.822222 423.822222 0 0 0-301.511111-125.155556H0v170.666667h85.902222A254.293333 254.293333 0 0 1 267.377778 387.982222zM1024 711.111111h-85.902222a254.293333 254.293333 0 0 1-180.906667-75.093333l-22.186667-22.186667-120.604444 120.604445 22.186667 22.186666a423.822222 423.822222 0 0 0 301.511111 125.155556H1024V1024l341.333333-227.555556-341.333333-227.555555v142.222222z m-85.902222-398.222222H1024V455.111111l341.333333-227.555555-341.333333-227.555556v142.222222h-85.902222a423.822222 423.822222 0 0 0-301.511111 125.155556L267.377778 636.017778a254.293333 254.293333 0 0 1-181.475556 75.093333H0v170.666667h85.902222a423.822222 423.822222 0 0 0 301.511111-125.155556l369.208889-368.64a254.293333 254.293333 0 0 1 181.475556-75.093333z" fill="" p-id="2491"></path>
+            </svg>    
+        </symbol>
+        <symbol id="save">
+        <!-- 保存(软盘)的图标 来自  https://www.iconfont.cn/search/index?searchType=icon&q=save -->
+            <svg x="10" y="10" t="1594067213667" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2080" width="80" height="80"><path d="M1008 49.056l0 958.912L788.208 1007.968 788.208 655.904 235.792 655.904l0 352.064-73.92 0L16 862.096 16 49.056 51.008 16l108.928 0 0 494.048L862.08 510.048 862.08 16l112.816 0L1008 49.056zM788.208 434.192 235.792 434.192 235.792 16l552.4 0L788.192 434.192zM313.6 731.776l396.8 0L710.4 1008 313.6 1008 313.6 731.776zM381.68 938l75.84 0 0-134.256-75.84 0L381.68 938z" p-id="2081"></path></svg>
+        </symbol>
+        <symbol id="loop">
+        <!-- 循环的图标 来自 https://www.iconfont.cn/search/index?searchType=icon&q=%E5%BE%AA%E7%8E%AF -->
+            <svg t="1593029389151" class="icon" viewBox="0 0 1152 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2139" width="100" height="100">
+                <path d="M448 256h320v128l192-192-192-192v128H448A448 448 0 0 0 0 576h128A320 320 0 0 1 448 256zM1024 448a320 320 0 0 1-320 320H384v-128l-192 192 192 192v-128h320a448 448 0 0 0 448-448z" p-id="2140"></path>
+            </svg>
+        </symbol>
+        <symbol id="twitter">
+        <!-- 推特的图标 来自 https://www.iconfont.cn/search/index?searchType=icon&q=twitter -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100px" height="100px">
+                <path d="M42 12.429c-1.323 0.586-2.746 0.977-4.247 1.162c1.526-0.906 2.7-2.351 3.251-4.058c-1.428 0.837-3.01 1.452-4.693 1.776C34.967 9.884 33.05 9 30.926 9c-4.08 0-7.387 3.278-7.387 7.32c0 0.572 0.067 1.129 0.193 1.67c-6.138-0.308-11.582-3.226-15.224-7.654c-0.64 1.082-1 2.349-1 3.686c0 2.541 1.301 4.778 3.285 6.096c-1.211-0.037-2.351-0.374-3.349-0.914c0 0.022 0 0.055 0 0.086c0 3.551 2.547 6.508 5.923 7.181c-0.617 0.169-1.269 0.263-1.941 0.263c-0.477 0-0.942-0.054-1.392-0.135c0.94 2.902 3.667 5.023 6.898 5.086c-2.528 1.96-5.712 3.134-9.174 3.134c-0.598 0-1.183-0.034-1.761-0.104C9.268 36.786 13.152 38 17.321 38c13.585 0 21.017-11.156 21.017-20.834c0-0.317-0.01-0.633-0.025-0.945C39.763 15.197 41.013 13.905 42 12.429"/>
+            </svg>
+        </symbol>
+        <symbol id="linux">
+        <!-- linux的图标 来自 https://www.iconfont.cn/search/index?searchType=icon&q=linux -->
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" t="1589853859826" class="icon" viewBox="0 0 1024 1024" version="1.1" p-id="1316" width="100" height="100">
+            <path d="M452 234.857143q-6.285714 0.571429-8.857143 6T438.285714 246.285714q-2.857143 0.571429-2.857143-2.857143 0-6.857143 10.857143-8.571428h5.714286z m49.714286 8q-2.285714 0.571429-6.571429-3.714286T485.142857 236.571429q13.714286-6.285714 18.285714 1.142857 1.714286 3.428571-1.714285 5.142857zM301.142857 486.857143q-2.285714-0.571429-3.428571 1.714286t-2.571429 7.142857T292 503.428571t-5.714286 7.428572q-4 5.714286-0.571428 6.857143 2.285714 0.571429 7.142857-4t7.142857-10.285715q0.571429-1.714286 1.142857-4t1.142857-3.428571 0.857143-2.571429 0.285714-2.285714v-1.714286l-0.571428-1.428571-1.714286-1.142857z m488.571429 205.142857q0-10.285714-31.428572-24 2.285714-8.571429 4.285715-15.714286t2.857142-14.857143 1.714286-12.285714 0.285714-12.857143-0.571428-11.142857-2-12.571428-2.285714-11.714286-2.857143-14.285714-3.142857-15.142858q-5.714286-27.428571-26.857143-58.857142t-41.142857-42.857143q13.714286 11.428571 32.571428 47.428571 49.714286 92.571429 30.857143 158.857143-6.285714 22.857143-28.571429 24-17.714286 2.285714-22-10.571429t-4.571428-47.714285-6.571429-61.142857q-5.142857-22.285714-11.142857-39.428572t-11.142857-26-8.857143-14-7.428571-8.571428-4.285715-4q-8-35.428571-17.714285-58.857143t-16.857143-32-13.428572-18.857143-8.571428-22.857143q-2.285714-12 3.428571-30.571429t2.571429-28.285714-25.428572-14.285714q-8.571429-1.714286-25.428571-10.285714T525.714286 239.428571q-4.571429-0.571429-6.285715-14.857142t4.571429-29.142858 20.571429-15.428571q21.142857-1.714286 29.142857 17.142857t2.285714 33.142857q-6.285714 10.857143-1.142857 15.142857t17.142857 0.285715q7.428571-2.285714 7.428571-20.571429v-21.142857q-2.857143-17.142857-7.714285-28.571429t-12-17.428571-13.428572-8.571429-15.428571-4.285714q-61.142857 4.571429-50.857143 76.571429 0 8.571429-0.571429 8.571428-5.142857-5.142857-16.857142-6t-18.857143 0.285715-8.857143-2.857143q0.571429-32.571429-9.142857-51.428572t-25.714286-19.428571q-15.428571-0.571429-23.714286 15.714286T386.857143 200.571429q-0.571429 8.571429 2 21.142857t7.428571 21.428571T405.142857 250.857143q5.714286-1.714286 9.142857-8 2.285714-5.142857-4-4.571429-4 0-8.857143-8.285714T396 210.857143q-0.571429-12.571429 5.142857-21.142857t19.428572-8q9.714286 0 15.428571 12t5.428571 22.285714-0.857142 12.571429q-12.571429 8.571429-17.714286 16.571428-4.571429 6.857143-15.714286 13.428572T395.428571 265.714286q-7.428571 8-8.857142 15.428571t4.285714 10.285714q8 4.571429 14.285714 11.142858t9.142857 10.857142 10.571429 7.428572T445.142857 324.571429q26.857143 1.142857 58.285714-8.571429 1.142857-0.571429 13.142858-4t19.714285-6 16.857143-7.428571 12-10q5.142857-8 11.428572-4.571429 2.857143 1.714286 3.714285 4.857143t-1.714285 6.857143T569.142857 301.142857q-11.428571 3.428571-32.285714 12.285714T510.857143 324.571429q-25.142857 10.857143-40 13.142857-14.285714 2.857143-45.142857-1.142857-5.714286-1.142857-5.142857 1.142857t9.714285 10.857143q14.285714 13.142857 38.285715 12.571428 9.714286-0.571429 20.571428-4t20.571429-8 19.142857-10 17.142857-9.714286 14-6.857142 10-1.428572 4.857143 6.285714q0 1.142857-0.571429 2.571429t-2.285714 2.857143-3.428571 2.571428-4.857143 2.857143-5.142857 2.571429-5.714286 2.857143-5.428572 2.571428q-16 8-38.571428 25.142857T470.857143 396t-28 0.571429q-12-6.285714-36-41.714286-12.571429-17.714286-14.285714-12.571429-0.571429 1.714286-0.571429 5.714286 0 14.285714-8.571429 32.285714T366.571429 412t-12 33.142857 6.571428 36q-13.142857 3.428571-35.714286 51.428572T298.285714 613.142857q-1.142857 10.285714-0.857143 39.428572t-3.142857 33.714285q-4.571429 13.714286-16.571428 1.714286-18.285714-17.714286-20.571429-53.714286-1.142857-16 2.285714-32 2.285714-10.857143-0.571428-10.285714l-2.285714 2.857143q-20.571429 37.142857 5.714285 94.857143 2.857143 6.857143 14.285715 16t13.714285 11.428571q11.428571 13.142857 59.428572 51.714286t53.142857 43.714286q9.142857 8.571429 10 21.714285t-8 24.571429-26 13.142857q4.571429 8.571429 16.571428 25.428571t16 30.857143 4 40.285715q26.285714-13.714286 4-52.571429-2.285714-4.571429-6-9.142857t-5.428571-6.857143-1.142857-3.428571q1.714286-2.857143 7.428571-5.428572t11.428572 1.428572q26.285714 29.714286 94.857143 20.571428 76-8.571429 101.142857-49.714286 13.142857-21.714286 19.428571-17.142857 6.857143 3.428571 5.714286 29.714286-0.571429 14.285714-13.142857 52.571429-5.142857 13.142857-3.428572 21.428571t13.714286 8.857143q1.714286-10.857143 8.285714-44t7.714286-51.428572q1.142857-12-3.714286-42t-4.285714-55.428571 13.142857-40.285714q8.571429-10.285714 29.142857-10.285715 0.571429-21.142857 19.714286-30.285714t41.428571-6 34.285715 12.857143zM430.857143 219.428571q1.714286-9.714286-1.428572-17.142857T422.857143 193.714286q-5.142857-1.142857-5.142857 4 1.142857 2.857143 2.857143 3.428571 5.714286 0 4 8.571429-1.714286 11.428571 4.571428 11.428571 1.714286 0 1.714286-1.714286z m239.428571 112.571429q-1.142857-4.571429-3.714285-6.571429t-7.428572-2.857142-8.285714-3.142858q-2.857143-1.714286-5.428572-4.571428t-4-4.571429-3.142857-3.714285-2.285714-2.285715-2.285714 0.857143q-8 9.142857 4 24.857143t22.285714 18q5.142857 0.571429 8.285714-4.571429t2-11.428571zM568.571429 210.285714q0-6.285714-2.857143-11.142857T559.428571 192t-5.142857-1.714286q-8 0.571429-4 4l2.285715 1.142857q8 2.285714 10.285714 17.714286 0 1.714286 4.571428-1.142857z m30.857142-133.142857q0-1.142857-1.428571-2.857143t-5.142857-4-5.428572-3.428571q-8.571429-8.571429-13.714285-8.571429-5.142857 0.571429-6.571429 4.285715t-0.571428 7.428571-0.285715 7.142857q-0.571429 2.285714-3.428571 6t-3.428572 5.142857 1.714286 4.857143q2.285714 1.714286 4.571429 0t6.285714-5.142857 8.571429-5.142857q0.571429-0.571429 5.142857-0.571429t8.571428-1.142857 5.142857-4z m322.857143 766.285714q11.428571 6.857143 17.714286 14t6.857143 13.714286-1.428572 12.857143-8.857142 12.571429-13.428572 11.142857-17.142857 10.571428-18 9.428572-18.285714 8.857143-15.428572 7.428571q-21.714286 10.857143-48.857143 32t-43.142857 36.571429q-9.714286 9.142857-38.857143 11.142857t-50.857142-8.285715q-10.285714-5.142857-16.857143-13.428571T646.285714 987.428571t-12.571428-11.142857-26.857143-5.428571q-25.142857-0.571429-74.285714-0.571429-10.857143 0-32.571429 0.857143t-33.142857 1.428572q-25.142857 0.571429-45.428572 8.571428t-30.571428 17.142857-24.857143 16.285715T335.428571 1021.142857q-16.571429-0.571429-63.428571-17.714286t-83.428571-24.571428q-10.857143-2.285714-29.142858-5.428572t-28.571428-5.142857-22.571429-5.428571-19.142857-8.285714-9.714286-11.142858q-5.714286-13.142857 4-38t10.285715-31.142857q0.571429-9.142857-2.285715-22.857143t-5.714285-24.285714-2.571429-20.857143 6-15.428571q8-6.857143 32.571429-8t34.285714-6.857143q17.142857-10.285714 24-20t6.857143-29.142857q12 41.714286-18.285714 60.571428-18.285714 11.428571-47.428572 8.571429-19.428571-1.714286-24.571428 5.714286-7.428571 8.571429 2.857142 32.571428 1.142857 3.428571 4.571429 10.285715t4.857143 10.285714 2.571428 9.714286 0.571429 12.571428q0 8.571429-9.714286 28t-8 27.428572q1.714286 9.714286 21.142857 14.857142 11.428571 3.428571 48.285715 10.571429T220.571429 969.714286q13.714286 3.428571 42.285714 12.571428t47.142857 13.142857 31.714286 2.285715q24.571429-3.428571 36.857143-16t13.142857-27.428572-4.285715-33.428571-10.857142-29.714286-11.428572-20.857143q-69.142857-108.571429-96.571428-138.285714-38.857143-42.285714-64.571429-22.857143-6.285714 5.142857-8.571429-8.571428-1.714286-9.142857-1.142857-21.714286 0.571429-16.571429 5.714286-29.714286t13.714286-26.857143 12.571428-24q4.571429-12 15.142857-41.142857t16.857143-44.571428 17.142857-34.857143 22.285715-30.857143q62.857143-81.714286 70.857143-111.428572-6.857143-64-9.142858-177.142857-1.142857-51.428571 13.714286-86.571428T433.714286 12Q456 0 493.142857 0q30.285714-0.571429 60.571429 7.714286t50.857143 23.714285q32.571429 24 52.285714 69.428572T673.714286 185.142857q-2.857143 54.285714 17.142857 122.285714 19.428571 64.571429 76 124.571429 31.428571 33.714286 56.857143 93.142857t34 109.142857q4.571429 28 2.857143 48.285715t-6.857143 31.714285-11.428572 12.571429q-5.714286 1.142857-13.428571 10.857143t-15.428572 20.285714-23.142857 19.142857-34.857143 8q-10.285714-0.571429-18-2.857143t-12.857142-7.714285-7.714286-8.857143-6.571429-11.714286-5.142857-11.142857q-12.571429-21.142857-23.428571-17.142857t-16 28 4 55.428571q11.428571 40 0.571428 111.428572-5.714286 37.142857 10.285715 57.428571t41.714285 18.857143 48.571429-20.285714q33.714286-28 51.142857-38T881.142857 914.285714q30.285714-10.285714 44-20.857143t10.571429-19.714285-14.285715-16.285715-29.428571-13.428571q-18.857143-6.285714-28.285714-27.428571t-8.571429-41.428572 8.857143-27.142857q0.571429 17.714286 4.571429 32.285714t8.285714 23.142857 11.714286 16.285715 12 10.857143 12.285714 7.428571 9.428571 5.428571z" p-id="1317"/>
+            </svg>
+        </symbol>
+    </g>
+    <g fill="#f00" stroke="#f00" stroke-width="0">    
+    <!-- 精灵图像 -->
+        <g id="Y0">
+        <!-- 常用ui图标 -->
+            <!-- A0 Logo -->
+            <svg x="000" y="000" viewBox="0 0 100 100" width="100" height="100"><use href="#logo" ></use></svg>
+            <!-- B0 BBS -->
+            <svg x="100" y="000" viewBox="0 0 100 100" width="100" height="100"><use href="#bbs" ></use></svg>
+            <!-- C0 Mod -->
+            <svg x="200" y="000" viewBox="0 0 100 100" width="100" height="100"><use href="#jigsaw"></use></svg>
+            <!-- D0 Eye -->
+            <svg x="300" y="000" viewBox="0 0 100 100" width="100" height="100"><use href="#openEye"></use></svg>
+            <!-- E0 Eye(close) -->
+            <svg x="400" y="000" viewBox="0 0 100 100" width="100" height="100"><use href="#closeEye"></use></svg>
+            <!-- f0 Yes(sqrt) -->
+            <svg x="500" y="000" viewBox="0 0 100 100" width="100" height="100"><use href="#sqrt"></use></svg>
+            <!-- g0 Key -->
+            <svg x="600" y="000" viewBox="0 0 100 100" width="100" height="100"><use href="#key"></use></svg>
+            <!-- h0 List -->
+            <svg x="700" y="000" viewBox="0 0 100 100" width="100" height="100"><use href="#list"></use></svg>
+            <!-- i0 User -->
+            <svg x="800" y="000" viewBox="0 0 100 100" width="100" height="100"><use href="#user"></use></svg>
+            <!-- j0 Home -->
+            <svg x="900" y="000" viewBox="0 0 100 100" width="100" height="100"><use href="#home"></use></svg>
+        </g>
+        <g id="Y1">
+        <!-- 常用符号 -->
+            <!-- A1 -->
+            <svg x="000" y="100" viewBox="0 0 100 100" width="100" height="100"><use href="#Query"></use></svg>
+            <!-- B1 -->
+            <svg x="100" y="100" viewBox="0 0 100 100" width="100" height="100"><use href="#reload"></use></svg>
+            <!-- C1 -->
+            <svg x="200" y="110" viewBox="0 0 100 100" width="100" height="100"><use href="#enter"></use></svg>
+            <!-- D1 -->
+            <svg x="300" y="100" viewBox="0 0 100 100" width="100" height="100"><use href="#add"></use></svg>
+            <!-- E1 -->
+            <svg x="400" y="100" viewBox="0 0 100 100" width="100" height="100"><use href="#minuid"></use></svg>
+            <!-- F1 -->
+            <svg x="500" y="100" viewBox="0 0 100 100" width="100" height="100"><use href="#multiply"></use></svg>
+            <!-- G1 -->
+            <svg x="600" y="100" viewBox="0 0 100 100" width="100" height="100"><use href="#divided"></use></svg>
+            <!-- H1 -->
+            <svg x="700" y="100" viewBox="0 0 100 100" width="100" height="100"><use href="#percent"></use></svg>
+            <!-- I1 -->
+            <svg x="800" y="100" viewBox="0 0 100 100" width="100" height="100"><use href="#v_ddd"></use></svg>
+            <!-- J1 -->
+            <svg x="900" y="100" viewBox="0 0 100 100" width="100" height="100"><use href="#up_down"></use></svg>
+        </g>
+        <g id="Y2">
+        <!-- 播放器 -->
+            <!-- A2 -->
+            <svg x="000" y="200" viewBox="0 0 100 100" width="100" height="100"><use href="#play"></use></svg>
+            <!-- B2 -->
+            <svg x="100" y="200" viewBox="0 0 100 100" width="100" height="100"><use href="#pause"></use></svg>
+            <!-- C2 -->
+            <svg x="200" y="200" viewBox="0 0 100 100" width="100" height="100"><use href="#next"></use></svg>
+            <!-- D2 -->
+            <svg x="300" y="200" viewBox="0 0 100 100" width="100" height="100"><use href="#loop"></use></svg>
+            <!-- E2 -->
+            <svg x="400" y="200" viewBox="0 0 100 100" width="100" height="100"><use href="#random"></use></svg>
+            <!-- F2 -->
+            <svg x="500" y="200" viewBox="0 0 100 100" width="100" height="100"><use href="#volume"></use></svg>
+            <!-- G2 -->
+            <svg x="600" y="200" viewBox="0 0 100 100" width="100" height="100"><use href="#fullScrren"></use></svg>
+            <!-- H2 -->
+            <svg x="700" y="200" viewBox="0 0 100 100" width="100" height="100"><use href="#fullWindow"></use></svg>
+            <!-- I2 -->
+            <svg x="800" y="200" viewBox="0 0 100 100" width="100" height="100"><use href="#unFullScrren"></use></svg>
+            <!-- J2 -->
+            <svg x="900" y="200" viewBox="0 0 100 100" width="100" height="100"><use href="#unFullWindow"></use></svg>
+            
+        </g>
+        <g id="Y3">
+        <!-- 编辑 -->
+            <!-- A3 -->
+            <svg x="000" y="300" viewBox="0 0 100 100" width="100" height="100"><use href="#pan"></use></svg>
+            <!-- B3 -->
+            <svg x="100" y="300" viewBox="0 0 100 100" width="100" height="100"><use href="#edit"></use></svg>
+            <!-- C3 -->
+            <svg x="200" y="300" viewBox="0 0 100 100" width="100" height="100"><use href="#save"></use></svg>
+            <!-- D3 -->
+            <svg x="300" y="300" viewBox="0 0 100 100" width="100" height="100"><use href="#download"></use></svg>
+            <!-- E3 -->
+            <svg x="400" y="300" viewBox="0 0 100 100" width="100" height="100"><use href="#copy"></use></svg>
+            <!-- F3 -->
+            <svg x="500" y="300" viewBox="0 0 100 100" width="100" height="100"><use href="#cursor"></use></svg>
+            <!-- G3 -->
+            <svg x="600" y="300" viewBox="0 0 100 100" width="100" height="100"><use href="#folder"></use></svg>
+            <!-- H3 -->
+            <svg x="700" y="300" viewBox="0 0 100 100" width="100" height="100"><use href="#folder_open"></use></svg>
+            <!-- I3 -->
+            <svg x="800" y="300" viewBox="0 0 100 100" width="100" height="100"><use href="#folder_closed"></use></svg>
+            <!-- J3 -->
+            <svg x="900" y="300" viewBox="0 0 100 100" width="100" height="100"><use href="#move"></use></svg>
+        </g>
+        <g id="Y4">
+        <!-- 统计图 -->
+            <!-- A4 -->
+            <svg x="000" y="400" viewBox="0 0 100 100" width="100" height="100"><use href="#radarChart"></use></svg>
+            <!-- B4 -->
+            <svg x="100" y="400" viewBox="0 0 100 100" width="100" height="100"><use href="#pieChart"></use></svg>
+            <!-- C4 -->
+            <svg x="200" y="400" viewBox="0 0 100 100" width="100" height="100"><use href="#rename"></use></svg>
+        <!-- 符号 -->
+            <!-- H4 -->
+            <svg x="700" y="400" viewBox="0 0 100 100" width="100" height="100"><use href="#same_reference"></use></svg>
+            <!-- I4 -->
+            <svg x="800" y="400" viewBox="0 0 100 100" width="100" height="100"><use href="#copy_SameReference"></use></svg>
+            <!-- J4 -->
+            <svg x="900" y="400" viewBox="0 0 100 100" width="100" height="100"><use href="#location"></use></svg>
+        </g>
+        <g id="Y5">
+        <!-- 2d基本几何图形 -->
+            <!-- A5 -->
+            <svg x="000" y="500" viewBox="0 0 100 100" width="100" height="100"><use href="#rect"></use></svg>
+            <!-- B5 -->
+            <svg x="100" y="500" viewBox="0 0 100 100" width="100" height="100"><use href="#arc"></use></svg>
+            <!-- C5 -->
+            <svg x="200" y="500" viewBox="0 0 100 100" width="100" height="100"><use href="#sector"></use></svg>
+            <!-- D5 -->
+            <svg x="300" y="500" viewBox="0 0 100 100" width="100" height="100"><use href="#polygon"></use></svg>
+            <!-- D5 -->
+            <svg x="400" y="500" viewBox="0 0 100 100" width="100" height="100"><use href="#bezier"></use></svg>
+            <!-- E5 -->
+            <svg x="500" y="500" viewBox="0 0 100 100" width="100" height="100"><use href="#path"></use></svg>
+            <!-- F5 -->
+            <svg x="600" y="500" viewBox="0 0 100 100" width="100" height="100"><use href="#linear_mapping"></use></svg>
+        </g>
+        <g id="Y6">
+        </g>
+        <g id="Y9">
+        <!-- LOGO -->
+            <!-- A9 -->
+            <svg x="000" y="900" viewBox="0 0 100 100" width="100" height="100" ><use href="#linux"></use></svg>
+            <!-- B9 -->
+            <svg x="100" y="900" viewBox="0 0 100 100" width="100" height="100" ><use href="#twitter"></use></svg>
+        </g>
+    </g>
+</svg>
