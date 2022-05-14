@@ -89,6 +89,10 @@ html,body{
     color    : var(--hidderTextColor);
     font-size: 0px;
 }
+.hidden{
+    display: none;
+    visibility: hidden;
+}
 /* icon精灵图像 */
 .iconSpritesSvg{
     width             : 1em;
