@@ -289,6 +289,15 @@ html,body{
     mask-position        : -200% -400%;
     -webkit-mask-position: -200% -400%;
 }
+.iconSpritesSvg-crosscut,.iconSpritesSvg-34{
+    mask-position        : -300% -400%;
+    -webkit-mask-position: -300% -400%;
+}
+.iconSpritesSvg-crosscut,.iconSpritesSvg-34_i{
+    mask-position        : -300% -400%;
+    -webkit-mask-position: -300% -400%;
+    transform: rotate(90deg);
+}
 .iconSpritesSvg-74{
     mask-position        : -700% -400%;
     -webkit-mask-position: -700% -400%;
