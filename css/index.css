@@ -1,0 +1,34 @@
+/*
+ * @Author: Darth_Eternalfaith darth_ef@hotmail.com
+ * @LastEditors: Darth_Eternalfaith darth_ef@hotmail.com
+ * @LastEditTime: 2022-10-03 02:14:22
+ * @FilePath: \site\css\import\DEF_UI_Lib\css\index.css
+ * @Description: index
+ * 
+ * Copyright (c) 2022 by Darth_Eternalfaith darth_ef@hotmail.com, All Rights Reserved. 
+ */
+@import url("./basics.css");
+
+html,body{
+    padding         : 0;
+    margin          : 0;
+    background-color: var(--colorA);
+    color: var(--colorB);
+}
+*{
+    font-family    : "DejaVuSansMono";
+    box-sizing     : border-box;
+    position       : relative;
+    padding        : 0;
+    margin         : 0;
+    list-style     : none;
+    text-decoration: none;
+    outline        : none;
+}
+.iconSpritesSvg{
+    background-color  : var(--colorB);
+}
+.logo__DEF{
+    background-image: url(../img/logo.svg);
+    background-size:100% 100%;
+}

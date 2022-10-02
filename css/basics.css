@@ -1,3 +1,12 @@
+/*
+ * @Author: Darth_Eternalfaith darth_ef@hotmail.com
+ * @LastEditors: Darth_Eternalfaith darth_ef@hotmail.com
+ * @LastEditTime: 2022-10-03 03:35:59
+ * @FilePath: \site\css\import\DEF_UI_Lib\css\basics.css
+ * @Description: 图标 和 配色
+ * 
+ * Copyright (c) 2022 by Darth_Eternalfaith darth_ef@hotmail.com,                                All Rights Reserved. 
+ */
 :root{
     --colorA : #000;
     --colorA0: #0000;
@@ -65,21 +74,32 @@
     font-family: "DejaVuSansMono";
     src        : url("../fonts/DejaVuSansMono-1.ttf");
 }
-html,body{
-    padding         : 0;
-    margin          : 0;
-    background-color: var(--colorA);
+
+@font-face {
+    font-family: "Ubuntu Mono derivative Powerline";
+    src        : local("Ubuntu Mono derivative Powerline") 
+                 url("../fonts/Ubuntu\ Mono\ derivative\ Powerline.ttf") format("opentype");
 }
-*{
-    font-family    : "DejaVuSansMono";
-    box-sizing     : border-box;
-    position       : relative;
-    padding        : 0;
-    margin         : 0;
-    list-style     : none;
-    text-decoration: none;
-    outline        : none;
+@font-face {
+    font-family: "Ubuntu Mono derivative Powerline";
+    src        : local("Ubuntu Mono derivative Powerline") 
+                 url("../fonts/Ubuntu\ Mono\ derivative\ Powerline\ Bold.ttf") format("opentype");
+    font-weight: bold;
 }
+@font-face {
+    font-family: "Ubuntu Mono derivative Powerline";
+    src        : local("Ubuntu Mono derivative Powerline") 
+                 url("../fonts/Ubuntu\ Mono\ derivative\ Powerline\ Bold\ Italic.ttf") format("opentype");
+    font-weight: bold;
+    font-style : italic;
+}
+@font-face {
+    font-family: "Ubuntu Mono derivative Powerline";
+    src        : local("Ubuntu Mono derivative Powerline") 
+                 url("../fonts/Ubuntu\ Mono\ derivative\ Powerline\ Italic.ttf") format("opentype");
+    font-style : italic;
+}
+
 .unrap_ellipsis{
     overflow: hidden;
     white-space: nowrap;
@@ -97,7 +117,6 @@ html,body{
 .iconSpritesSvg{
     width             : 1em;
     height            : 1em;
-    background-color  : var(--colorB);
     mask-image        : url("../img/iconSprites.svg");
     mask-size         : 1000% 1000%;
     -webkit-mask-image: url("../img/iconSprites.svg");
@@ -106,238 +125,69 @@ html,body{
     display           : inline-block;
     /* 不要再这个元素里加 childnode */
 }
-/* Y0 */
-.iconSpritesSvg-logo,.iconSpritesSvg-00{
-    mask-position        : 0 0;
-    -webkit-mask-position: 0 0;
-}
-.iconSpritesSvg-bbs,.iconSpritesSvg-10{
-    mask-position        : -100% 0;
-    -webkit-mask-position: -100% 0;
-}
-.iconSpritesSvg-jigsaw,.iconSpritesSvg-20{
-    mask-position        : -200% 0;
-    -webkit-mask-position: -200% 0;
-}
-.iconSpritesSvg-eye,.iconSpritesSvg-30{
-    mask-position        : -300% 0;
-    -webkit-mask-position: -300% 0;
-}
-.iconSpritesSvg-closeEye,.iconSpritesSvg-40{
-    mask-position        : -400% 0;
-    -webkit-mask-position: -400% 0;
-}
-.iconSpritesSvg-sqrt,.iconSpritesSvg-yes,.iconSpritesSvg-50{
-    mask-position        : -500% 0;
-    -webkit-mask-position: -500% 0;
-}
-.iconSpritesSvg-key,.iconSpritesSvg-60{
-    mask-position        : -600% 0;
-    -webkit-mask-position: -600% 0;
-}
-.iconSpritesSvg-index,.iconSpritesSvg-70{
-    mask-position        : -700% 0;
-    -webkit-mask-position: -700% 0;
-}
-.iconSpritesSvg-user,.iconSpritesSvg-80{
-    mask-position        : -800% 0;
-    -webkit-mask-position: -800% 0;
-}
-.iconSpritesSvg-home,.iconSpritesSvg-90{
-    mask-position        : -900% 0;
-    -webkit-mask-position: -900% 0;
-}
-/* Y1 */
-.iconSpritesSvg-selete,.iconSpritesSvg-01{
-    mask-position        : 0 -100%;
-    -webkit-mask-position: 0 -100%;
-}
-.iconSpritesSvg-reload,.iconSpritesSvg-11{
-    mask-position        : -100% -100%;
-    -webkit-mask-position: -100% -100%;
-}
-.iconSpritesSvg-enter,.iconSpritesSvg-21{
-    mask-position        : -200% -100%;
-    -webkit-mask-position: -200% -100%;
-}
-.iconSpritesSvg-add,.iconSpritesSvg-31{
-    mask-position        : -300% -100%;
-    -webkit-mask-position: -300% -100%;
-}
-.iconSpritesSvg-minuid,.iconSpritesSvg-41{
-    mask-position        : -400% -100%;
-    -webkit-mask-position: -400% -100%;
-}
-.iconSpritesSvg-multiply,.iconSpritesSvg-51{
-    mask-position        : -500% -100%;
-    -webkit-mask-position: -500% -100%;
-}
-.iconSpritesSvg-divided,.iconSpritesSvg-61{
-    mask-position        : -600% -100%;
-    -webkit-mask-position: -600% -100%;
-}
-.iconSpritesSvg-percent,.iconSpritesSvg-71{
-    mask-position        : -700% -100%;
-    -webkit-mask-position: -700% -100%;
-}
-.iconSpritesSvg-ddd,.iconSpritesSvg-81{
-    mask-position        : -800% -100%;
-    -webkit-mask-position: -800% -100%;
-}
-.iconSpritesSvg-arrow,.iconSpritesSvg-91{
-    mask-position        : -900% -100%;
-    -webkit-mask-position: -900% -100%;
-}
-/* Y2 */
-.iconSpritesSvg-play,.iconSpritesSvg-02{
-    mask-position        : 0 -200%;
-    -webkit-mask-position: 0 -200%;
-}
-.iconSpritesSvg-pause,.iconSpritesSvg-12{
-    mask-position        : -100% -200%;
-    -webkit-mask-position: -100% -200%;
-}
-.iconSpritesSvg-next,.iconSpritesSvg-22{
-    mask-position        : -200% -200%;
-    -webkit-mask-position: -200% -200%;
-}
-.iconSpritesSvg-last{
-    mask-position        : -200% -200%;
-    -webkit-mask-position: -200% -200%;
-    transform            : scaleX(-1);
-}
-.iconSpritesSvg-loop,.iconSpritesSvg-32{
-    mask-position        : -300% -200%;
-    -webkit-mask-position: -300% -200%;
-}
-.iconSpritesSvg-random,.iconSpritesSvg-42{
-    mask-position        : -400% -200%;
-    -webkit-mask-position: -400% -200%;
-}
-.iconSpritesSvg-volume,.iconSpritesSvg-52{
-    mask-position        : -500% -200%;
-    -webkit-mask-position: -500% -200%;
-}
-.iconSpritesSvg-fullScrren,.iconSpritesSvg-62{
-    mask-position        : -600% -200%;
-    -webkit-mask-position: -600% -200%;
-}
-.iconSpritesSvg-fullWindow,.iconSpritesSvg-72{
-    mask-position        : -700% -200%;
-    -webkit-mask-position: -700% -200%;
-}
-.iconSpritesSvg-unFullScrren,.iconSpritesSvg-82{
-    mask-position        : -800% -200%;
-    -webkit-mask-position: -800% -200%;
-}
-.iconSpritesSvg-unFullWindow,.iconSpritesSvg-92{
-    mask-position        : -900% -200%;
-    -webkit-mask-position: -900% -200%;
-}
-/* Y3 */
-.iconSpritesSvg-pan,.iconSpritesSvg-03{
-    mask-position        : 0 -300%;
-    -webkit-mask-position: 0 -300%;
-}
-.iconSpritesSvg-edit,.iconSpritesSvg-13{
-    mask-position        : -100% -300%;
-    -webkit-mask-position: -100% -300%;
-}
-.iconSpritesSvg-save,.iconSpritesSvg-23{
-    mask-position        : -200% -300%;
-    -webkit-mask-position: -200% -300%;
-}
-.iconSpritesSvg-download,.iconSpritesSvg-33{
-    mask-position        : -300% -300%;
-    -webkit-mask-position: -300% -300%;
-}
-.iconSpritesSvg-copy,.iconSpritesSvg-43{
-    mask-position        : -400% -300%;
-    -webkit-mask-position: -400% -300%;
-}
-.iconSpritesSvg-cursor,.iconSpritesSvg-53{
-    mask-position        : -500% -300%;
-    -webkit-mask-position: -500% -300%;
-}
-.iconSpritesSvg-63{
-    mask-position        : -600% -300%;
-    -webkit-mask-position: -600% -300%;
-}
-.iconSpritesSvg-73{
-    mask-position        : -700% -300%;
-    -webkit-mask-position: -700% -300%;
-}
-.iconSpritesSvg-83{
-    mask-position        : -800% -300%;
-    -webkit-mask-position: -800% -300%;
-}
-.iconSpritesSvg-93{
-    mask-position        : -900% -300%;
-    -webkit-mask-position: -900% -300%;
-}
 
-/* Y4 */
-.iconSpritesSvg-radarChart,.iconSpritesSvg-04{
-    mask-position        : 0 -400%;
-    -webkit-mask-position: 0 -400%;
-}
-.iconSpritesSvg-pieChart,.iconSpritesSvg-14{
-    mask-position        : -100% -400%;
-    -webkit-mask-position: -100% -400%;
-}
-.iconSpritesSvg-rename,.iconSpritesSvg-24{
-    mask-position        : -200% -400%;
-    -webkit-mask-position: -200% -400%;
-}
-.iconSpritesSvg-crosscut,.iconSpritesSvg-34{
-    mask-position        : -300% -400%;
-    -webkit-mask-position: -300% -400%;
-}
-.iconSpritesSvg-crosscut,.iconSpritesSvg-34_i{
-    mask-position        : -300% -400%;
-    -webkit-mask-position: -300% -400%;
-    transform: rotate(90deg);
-}
-.iconSpritesSvg-74{
-    mask-position        : -700% -400%;
-    -webkit-mask-position: -700% -400%;
-}
-.iconSpritesSvg-84{
-    mask-position        : -800% -400%;
-    -webkit-mask-position: -800% -400%;
-}
-.iconSpritesSvg-location,.iconSpritesSvg-94{
-    mask-position        : -900% -400%;
-    -webkit-mask-position: -900% -400%;
-}
-/* Y5 */
-.iconSpritesSvg-rect   ,.iconSpritesSvg-05{
-    mask-position        : -000% -500%;
-    -webkit-mask-position: -000% -500%;
-}
-.iconSpritesSvg-arc    ,.iconSpritesSvg-15{
-    mask-position        : -100% -500%;
-    -webkit-mask-position: -100% -500%;
-}
-.iconSpritesSvg-sector ,.iconSpritesSvg-25{
-    mask-position        : -200% -500%;
-    -webkit-mask-position: -200% -500%;
-}
-.iconSpritesSvg-polygon,.iconSpritesSvg-35{
-    mask-position        : -300% -500%;
-    -webkit-mask-position: -300% -500%;
-}
-.iconSpritesSvg-bezier ,.iconSpritesSvg-45{
-    mask-position        : -400% -500%;
-    -webkit-mask-position: -400% -500%;
-}
+/* ----- Sprites map open ----- */
+    /* -------- Y0 -------- */
+        .iconSpritesSvg-logo                   , .iconSpritesSvg-00                  { mask-position:  000% 000%;    -webkit-mask-position:  000% 000%;}
+        .iconSpritesSvg-bbs                    , .iconSpritesSvg-10                  { mask-position: -100% 000%;    -webkit-mask-position: -100% 000%;}
+        .iconSpritesSvg-jigsaw                 , .iconSpritesSvg-20                  { mask-position: -200% 000%;    -webkit-mask-position: -200% 000%;}
+        .iconSpritesSvg-eye                    , .iconSpritesSvg-30                  { mask-position: -300% 000%;    -webkit-mask-position: -300% 000%;}
+        .iconSpritesSvg-closeEye               , .iconSpritesSvg-40                  { mask-position: -400% 000%;    -webkit-mask-position: -400% 000%;}
+        .iconSpritesSvg-sqrt                   , .iconSpritesSvg-50                  { mask-position: -500% 000%;    -webkit-mask-position: -500% 000%;}
+        .iconSpritesSvg-key                    , .iconSpritesSvg-60                  { mask-position: -600% 000%;    -webkit-mask-position: -600% 000%;}
+        .iconSpritesSvg-index                  , .iconSpritesSvg-70                  { mask-position: -700% 000%;    -webkit-mask-position: -700% 000%;}
+        .iconSpritesSvg-user                   , .iconSpritesSvg-80                  { mask-position: -800% 000%;    -webkit-mask-position: -800% 000%;}
+        .iconSpritesSvg-home                   , .iconSpritesSvg-90                  { mask-position: -900% 000%;    -webkit-mask-position: -900% 000%;}
+    /* -------- Y1 -------- */
+        .iconSpritesSvg-selete                 , .iconSpritesSvg-01                  { mask-position:  000% -100%;   -webkit-mask-position:  000% -100%;}
+        .iconSpritesSvg-reload                 , .iconSpritesSvg-11                  { mask-position: -100% -100%;   -webkit-mask-position: -100% -100%;}
+        .iconSpritesSvg-enter                  , .iconSpritesSvg-21                  { mask-position: -200% -100%;   -webkit-mask-position: -200% -100%;}
+        .iconSpritesSvg-add                    , .iconSpritesSvg-31                  { mask-position: -300% -100%;   -webkit-mask-position: -300% -100%;}
+        .iconSpritesSvg-minuid                 , .iconSpritesSvg-41                  { mask-position: -400% -100%;   -webkit-mask-position: -400% -100%;}
+        .iconSpritesSvg-multiply               , .iconSpritesSvg-51                  { mask-position: -500% -100%;   -webkit-mask-position: -500% -100%;}
+        .iconSpritesSvg-divided                , .iconSpritesSvg-61                  { mask-position: -600% -100%;   -webkit-mask-position: -600% -100%;}
+        .iconSpritesSvg-percent                , .iconSpritesSvg-71                  { mask-position: -700% -100%;   -webkit-mask-position: -700% -100%;}
+        .iconSpritesSvg-ddd                    , .iconSpritesSvg-81                  { mask-position: -800% -100%;   -webkit-mask-position: -800% -100%;}
+        .iconSpritesSvg-arrow                  , .iconSpritesSvg-91                  { mask-position: -900% -100%;   -webkit-mask-position: -900% -100%;}
+    /* -------- Y2 -------- */
+        .iconSpritesSvg-play                   , .iconSpritesSvg-02                  { mask-position:  000% -200%;   -webkit-mask-position:  000% -200%;}
+        .iconSpritesSvg-pause                  , .iconSpritesSvg-12                  { mask-position: -100% -200%;   -webkit-mask-position: -100% -200%;}
+        .iconSpritesSvg-next                   , .iconSpritesSvg-22                  { mask-position: -200% -200%;   -webkit-mask-position: -200% -200%;}
+        .iconSpritesSvg-last                   , .iconSpritesSvg-22-Mirror           { mask-position: -200% -200%;   -webkit-mask-position: -200% -200%;       transform: scaleX(-1);}
+        .iconSpritesSvg-loop                   , .iconSpritesSvg-32                  { mask-position: -300% -200%;   -webkit-mask-position: -300% -200%;}
+        .iconSpritesSvg-random                 , .iconSpritesSvg-42                  { mask-position: -400% -200%;   -webkit-mask-position: -400% -200%;}
+        .iconSpritesSvg-volume                 , .iconSpritesSvg-52                  { mask-position: -500% -200%;   -webkit-mask-position: -500% -200%;}
+        .iconSpritesSvg-fullScrren             , .iconSpritesSvg-62                  { mask-position: -600% -200%;   -webkit-mask-position: -600% -200%;}
+        .iconSpritesSvg-fullWindow             , .iconSpritesSvg-72                  { mask-position: -700% -200%;   -webkit-mask-position: -700% -200%;}
+        .iconSpritesSvg-unFullScrren           , .iconSpritesSvg-82                  { mask-position: -800% -200%;   -webkit-mask-position: -800% -200%;}
+        .iconSpritesSvg-unFullWindow           , .iconSpritesSvg-92                  { mask-position: -900% -200%;   -webkit-mask-position: -900% -200%;}
+    /* -------- Y3 -------- */
+        .iconSpritesSvg-pan                    , .iconSpritesSvg-03                  { mask-position:  000% -300%;   -webkit-mask-position:  000% -300%;}
+        .iconSpritesSvg-edit                   , .iconSpritesSvg-13                  { mask-position: -100% -300%;   -webkit-mask-position: -100% -300%;}
+        .iconSpritesSvg-save                   , .iconSpritesSvg-23                  { mask-position: -200% -300%;   -webkit-mask-position: -200% -300%;}
+        .iconSpritesSvg-download               , .iconSpritesSvg-33                  { mask-position: -300% -300%;   -webkit-mask-position: -300% -300%;}
+        .iconSpritesSvg-copy                   , .iconSpritesSvg-43                  { mask-position: -400% -300%;   -webkit-mask-position: -400% -300%;}
+        .iconSpritesSvg-cursor                 , .iconSpritesSvg-53                  { mask-position: -500% -300%;   -webkit-mask-position: -500% -300%;}
+        .iconSpritesSvg-folder                 , .iconSpritesSvg-63                  { mask-position: -600% -300%;   -webkit-mask-position: -600% -300%;}
+        .iconSpritesSvg-folder__add            , .iconSpritesSvg-73                  { mask-position: -700% -300%;   -webkit-mask-position: -700% -300%;}
+        .iconSpritesSvg-folder__minuid         , .iconSpritesSvg-83                  { mask-position: -800% -300%;   -webkit-mask-position: -800% -300%;}
+        .iconSpritesSvg-move                   , .iconSpritesSvg-93                  { mask-position: -900% -300%;   -webkit-mask-position: -900% -300%;}
+    /* -------- Y4 -------- */
+        .iconSpritesSvg-radarChart             , .iconSpritesSvg-04                  { mask-position:  000% -400%;   -webkit-mask-position:  000% -400%;}
+        .iconSpritesSvg-pieChart               , .iconSpritesSvg-14                  { mask-position: -100% -400%;   -webkit-mask-position: -100% -400%;}
+        .iconSpritesSvg-rename                 , .iconSpritesSvg-24                  { mask-position: -200% -400%;   -webkit-mask-position: -200% -400%;}
+        .iconSpritesSvg-crosscut               , .iconSpritesSvg-34                  { mask-position: -300% -400%;   -webkit-mask-position: -300% -400%;}
+        .iconSpritesSvg-crosscut               , .iconSpritesSvg-34_i                { mask-position: -300% -400%;   -webkit-mask-position: -300% -400%;       transform: rotate(90deg);}
+        .iconSpritesSvg-same_reference         , .iconSpritesSvg-74                  { mask-position: -700% -400%;   -webkit-mask-position: -700% -400%;}
+        .iconSpritesSvg-copy_SameReference     , .iconSpritesSvg-84                  { mask-position: -800% -400%;   -webkit-mask-position: -800% -400%;}
+        .iconSpritesSvg-location               , .iconSpritesSvg-94                  { mask-position: -900% -400%;   -webkit-mask-position: -900% -400%;}
+    /* -------- Y5 -------- */
+        .iconSpritesSvg-rect                   , .iconSpritesSvg-05                  { mask-position: -000% -500%;   -webkit-mask-position: -000% -500%;}
+        .iconSpritesSvg-arc                    , .iconSpritesSvg-15                  { mask-position: -100% -500%;   -webkit-mask-position: -100% -500%;}
+        .iconSpritesSvg-sector                 , .iconSpritesSvg-25                  { mask-position: -200% -500%;   -webkit-mask-position: -200% -500%;}
+        .iconSpritesSvg-polygon                , .iconSpritesSvg-35                  { mask-position: -300% -500%;   -webkit-mask-position: -300% -500%;}
+        .iconSpritesSvg-bezier                 , .iconSpritesSvg-45                  { mask-position: -400% -500%;   -webkit-mask-position: -400% -500%;}
+        .iconSpritesSvg-path                   , .iconSpritesSvg-55                  { mask-position: -500% -500%;   -webkit-mask-position: -500% -500%;}
+        .iconSpritesSvg-linear_mapping         , .iconSpritesSvg-65                  { mask-position: -600% -500%;   -webkit-mask-position: -600% -500%;}
 
-.iconSpritesSvg-55{
-    mask-position        : -500% -500%;
-    -webkit-mask-position: -500% -500%;
-}
-
-.iconSpritesSvg-65{
-    mask-position        : -600% -500%;
-    -webkit-mask-position: -600% -500%;
-}
+/* ----- Sprites map end  ----- */
