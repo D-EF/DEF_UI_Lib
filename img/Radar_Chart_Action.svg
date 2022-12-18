@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+     <style>
+      @keyframes asd{
+        0%{
+          fill: url(#fill__mask__select);
+          transform: rotate(0deg);
+        }
+        100%{
+          fill: url(#fill__mask__select);
+          /* fill:#000; */
+          transform: rotate(360deg);
+        }
+      }
+      .rotate{
+        animation: asd 5s linear infinite;
+        transform-origin:500px 500px;
+      }
+    </style>
+  <defs>
+    <linearGradient id="_fill__mask__select"
+                    x1="0%" x2="100%"
+                    y1="100%" y2="0%"
+                    spreadMethod="reflect">
+      <stop offset="0%"   stop-color="#fffe" stop-opacity="1"/>
+      <stop offset="48%" stop-color="#fff8" stop-opacity="1"/>
+      <stop offset="50%" stop-color="#fff0" stop-opacity="1"/>
+    </linearGradient>
+    <radialGradient spreadMethod="reflect"
+                    cx="410%"
+                    cy="-190%"
+                    r="100%"
+                    fr="20%"
+                    id="fill__mask__select">
+      <stop offset="0%" stop-color="#fff"/>
+      <stop offset="40%" stop-color="#fffe"/>
+      <stop offset="60%" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <mask id="mask__select">
+    <svg x="0" y="0" width="1000" height="1000" viewBox="0 0 1000 1000">
+      <rect x="0" y="0" width="1000" height="1000" fill='#000' />
+      <rect x="500" y="500" width="1000" height="1000" fill="url(#fill__mask__select)" style="" class="rotate" />
+    </svg>
+  </mask>
+  <circle 
+    cx="500"
+    cy="500"
+    r="400"
+    mask="url(#mask__select)" 
+   />
+      <rect x="500" y="500" width="500" height="500" fill="url(#fill__mask__select)" />
+
+</svg>
